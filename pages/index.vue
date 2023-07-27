@@ -7,7 +7,7 @@
           class="text-black bg-slate-300 p-0.5 rounded px-4" />
       </div>
       <div class="flex flex-col">
-        <label for="name">Nom du qr :</label>
+        <label for="name">Nom du qrCode :</label>
         <input type="text" v-model="name" id="name" @change="updateMessage"
           class="text-black bg-slate-300 p-0.5 rounded px-4" />
       </div>
