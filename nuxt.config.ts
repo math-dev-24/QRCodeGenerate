@@ -5,26 +5,22 @@ export default defineNuxtConfig({
       htmlAttrs: {
         lang: "fr",
       },
-      title: "Générer un QR code ! Gratuitement",
+      title: "QR Code Generator",
       meta: [
         { charset: "utf-8" },
         { name: "viewport", content: "width=device-width, initial-scale=1" },
         {
           hid: "description",
           name: "description",
-          content: "Generate & scan QR Codes instantly!",
+          content: "Générer  vos QR Codes en instantanné !",
         },
-        // add more meta tags here
-        { name: "theme-color", content: "#ffffff" },
-        { name: "robots", content: "index, follow" },
-        { name: "author", content: "Joshua Sinaga, josua123690707@gmail.com" },
       ],
     },
   },
   modules: ["nuxt-windicss", "@nuxtjs/google-fonts"],
   googleFonts: {
     families: {
-      Inter: true,
+      Poppins: true,
     },
     prefetch: true,
     preconnect: true,

@@ -4,11 +4,11 @@
             {{ props.qr.name }}
         </h2>
         <canvas class="image-render-pixel h-full w-full" ref="canvas"></canvas>
-        <div class="grid grid-cols-2 place-items-center px-2 mb-3">
-            <div class="cursor-pointer border border-slate-200 bg-red-300 rounded-full p-0.5" @click="emit('delete', props.qr.id)"><img src="./../public/poubelle.png"
+        <div class="grid grid-cols-2 place-items-center px-2 mb-3 mt-2">
+            <div class="cursor-pointer border border-slate-200 bg-red-300 rounded-full p-0.5" @click="emit('delete', props.qr.id)"><img src="/poubelle.png"
                     class="h-15"></div>
             <div class="cursor-pointer border border-slate-200 bg-slate-400 rounded-full p-0.5" @click="download">
-                <img src="./../public/upload.png" alt="" class="h-15">
+                <img src="/upload.png" alt="" class="h-15">
             </div>
         </div>
 
@@ -21,18 +21,18 @@ import { ref, onMounted, watch } from "vue";
 import { qrCodeInterface } from "../shared/interface/qrCodeInterface";
 
 const props = defineProps<{
-    qr: qrCodeInterface
+    qr: qrCodeInterface,
+    rgbcube: RGBA,
+    rgbbg : RGBA,
 }>()
-
+console.log(props.rgbbg)
 const emit = defineEmits<{
     (e: 'delete', url: number): void
 }>()
 
-const blackRGBA: RGBA = [0, 0, 0, 255],
-    whiteRGBA: RGBA = [255, 255, 255, 255],
-    qrConfig = {
-        on: blackRGBA,
-        off: whiteRGBA,
+const qrConfig = {
+        on: props.rgbcube,
+        off: props.rgbbg,
     },
 
     canvas = ref<HTMLCanvasElement>(),
