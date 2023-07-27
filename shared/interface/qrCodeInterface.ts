@@ -1,7 +1,9 @@
+import { RGBA } from "lean-qr";
+
 export interface qrCodeInterface {
     id: number;
     name: string;
     url: string;
-    color: string;
-    backgroundColor: string;
+    color: RGBA;
+    backgroundColor: RGBA;
 }
