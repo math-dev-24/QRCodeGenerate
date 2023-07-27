@@ -3,23 +3,23 @@
         <div class="flex flex-col">
             <label for="url">l'url :</label>
             <input type="text" v-model="url" id="url" @change="updateMessage"
-                class="text-black bg-slate-300 p-0.5 rounded px-4" />
+                class="text-black bg-slate-200 p-0.5 rounded px-4" />
         </div>
         <div class="flex flex-col">
             <label for="name">Nom du qrCode :</label>
             <input type="text" v-model="name" id="name" @change="updateMessage"
-                class="text-black bg-slate-300 p-0.5 rounded px-4" />
+                class="text-black bg-slate-200 p-0.5 rounded px-4" />
         </div>
-        <div class="grid grid-cols-2">
+        <div class="grid grid-cols-1 md:grid-cols-2">
             <div class="flex content-center items-center gap-2">
                 <label for="color">Couleur des cubes :</label>
                 <input type="color" v-model="colorCube" id="color">
-                <input type="number" min="0" max="100" v-model="transCube" class="text-black rounded text-center">%
+                <input type="number" min="0" max="100" v-model="transCube" class="text-black rounded text-center bg-slate-200">%
             </div>
             <div class="flex content-center items-center gap-2">
                 <label for="bgcolor">Couleur de fond :</label>
                 <input type="color" id="bgcolor" v-model="colorBackground">
-                <input type="number" min="0" max="100" v-model="transBg" class="text-black rounded text-center">%
+                <input type="number" min="0" max="100" v-model="transBg" class="text-black rounded text-center bg-slate-200">%
             </div>
         </div>
         <span v-if="message" class="text-red-500">{{ message }}</span>
