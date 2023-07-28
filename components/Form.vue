@@ -80,8 +80,10 @@ function hexToRgba(hex: string, transp: number = 100): RGBA {
         transp = 0
     }
     if (transp > 100) {
-        transp = 100
+        transp = 255
     }
+    // 0 to 100 to 0 to 255
+    transp = Math.round((transp * 255) / 100)
     hex = hex.replace(/^#/, "");
     var red = parseInt(hex.substring(0, 2), 16);
     var green = parseInt(hex.substring(2, 4), 16);
